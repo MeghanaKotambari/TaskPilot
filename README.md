@@ -16,6 +16,15 @@ This project is developed as part of the AP Software Labs Internship Program.
 * React Router
 * Recharts
 
+# Features
+- Create and manage tasks
+- Task prioritization (High / Medium / Low)
+- Deadline tracking
+- Task status updates
+- Task filtering and search
+- Productivity analytics dashboard
+- Responsive user interface
+
 # Project Structure
 src
  ├── components
