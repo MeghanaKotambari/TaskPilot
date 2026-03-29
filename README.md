@@ -1,12 +1,14 @@
-# TaskPilot – Task & Productivity Management Web Application
+# 🚀 TaskPilot – Task & Productivity Management Web Application
 
-## Project Overview
+## 📌 Project Overview
 
-TaskPilot is a modern task and productivity management web application designed to help users organize tasks, track progress, and monitor productivity. The application allows users to create, update, prioritize, and track daily tasks with deadlines and status tracking.
+TaskPilot is a full-stack task and productivity management web application that helps users organize tasks, track progress, and improve productivity. The system supports task creation, prioritization, deadline tracking, and analytics.
 
-This project is developed as part of the AP Software Labs Internship Program.
+This project was developed as part of the **AP Software Labs Internship Program (1 Month)**.
 
-# Tech Stack
+---
+
+## 🛠 Tech Stack
 
 ### Frontend
 
@@ -16,158 +18,180 @@ This project is developed as part of the AP Software Labs Internship Program.
 * React Router
 * Recharts
 
-# Features
-- Create and manage tasks
-- Task prioritization (High / Medium / Low)
-- Deadline tracking
-- Task status updates
-- Task filtering and search
-- Productivity analytics dashboard
-- Responsive user interface
+### Backend
 
-# Project Structure
-src
- ├── components
- │     ├── Navbar.jsx
- │     ├── Sidebar.jsx
- │     ├── TaskCard.jsx
- │     ├── Loader.jsx
- │
- ├── pages
- │     ├── Landing.jsx
- │     ├── Register.jsx
- │     ├── Login.jsx
- │     ├── Dashboard.jsx
- │     ├── Tasks.jsx
- │     ├── Analytics.jsx
- │
- ├── App.jsx
- ├── main.jsx
+* Node.js
+* Express.js
+* MongoDB
+* JWT Authentication
+* Bcrypt
 
+---
 
-# Internship Progress Documentation
+## ✨ Features
 
-## Day 1 – Project Planning (March 1)
-Work Done:
-* Understood project requirements.
-* Analyzed the problem statement.
-* Planned application workflow and feature modules.
-Hours Invested: 4 Hours
+* User Authentication (Register & Login)
+* Task Creation, Update, Delete
+* Task Prioritization (High / Medium / Low)
+* Deadline Tracking
+* Task Status Management
+* Task Search and Filtering
+* Productivity Analytics Dashboard
+* Responsive UI Design
+* Secure APIs with JWT
 
-## Day 2 – Project Setup (March 2)
-Work Done:
-* Initialized React project.
-* Installed dependencies.
-Libraries Installed:
-* Tailwind CSS
-* Framer Motion
-* React Router
-* React Icons
-* Recharts
-Hours Invested: 5 Hours
+---
 
-## Day 3 – Landing Page Development (March 3)
-Work Done:
-* Designed landing page UI.
-* Implemented responsive layout.
-* Added animated UI components.
-Technologies Used:
-* Tailwind CSS
-* Framer Motion
-Hours Invested: 5 Hours
+## 📁 Project Structure
 
-## Day 4 – Register Page Development (March 4)
-Work Done:
-* Implemented user registration UI.
-* Designed form layout.
-* Added input fields and validation structure.
-Features:
-* Full name
-* Email
-* Password
-* Confirm password
-Hours Invested: 4 Hours
+```text id="a1v8o2"
+TaskPilot
+│
+├── frontend
+│   ├── src
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│
+├── backend
+│   ├── controllers
+│   ├── models
+│   ├── routes
+│   ├── middleware
+│   ├── config
+│   └── server.js
+│
+├── docs
+│   ├── week1-progress.md
+│   ├── week2-progress.md
+│   ├── week3-progress.md
+│   ├── week4-progress.md
+│   ├── database-schema.md
+│   └── api-documentation.md
+│
+├── README.md
+└── package.json
+```
 
-## Day 5 – Login Page Development (March 5)
-Work Done:
-* Created login UI.
-* Integrated authentication form layout.
-Features:
-* Email login
-* Password login
-Hours Invested: 4 Hours
+---
 
-## Day 6 – Sidebar Navigation (March 6)
-Work Done:
-* Implemented animated sidebar.
-* Added navigation links.
-Pages Connected:
-* Home
-* Dashboard
-* Tasks
-* Analytics
-Hours Invested: 4 Hours
+## 📅 30-Day Development Timeline
 
-## Day 7 – Dashboard Development (March 7)
-Work Done:
-* Designed dashboard UI.
-* Added task overview widgets.
-Dashboard Features:
-* Total tasks
-* Completed tasks
-* Pending tasks
-* Quick actions
-* Today's focus section
-Hours Invested: 5 Hours
+### 🟢 Week 1 (March 1 – 10) – Frontend Development
 
-## Day 8 – Task Management System (March 8)
-Work Done:
-* Developed task management page.
-Features Implemented:
-* Add new task
-* Delete task
-* Task priority selection
-* Deadline management
-* Status updates
-Hours Invested: 6 Hours
+* Project planning and requirement analysis
+* React setup and dependency installation
+* Landing page development
+* Register & login pages
+* Sidebar navigation
+* Dashboard UI
+* Task management UI
+* Task filtering and search
+* Analytics dashboard
 
-## Day 9 – Task Filtering & Search (March 9)
-Work Done:
-* Implemented advanced task management features.
-Features:
-* Task filters (All / Pending / Completed)
-* Task search functionality
-* Task progress tracking
-Hours Invested: 5 Hours
+---
 
-## Day 10 – Analytics Dashboard (March 10)
-Work Done:
-* Implemented analytics page.
-Features:
-* Weekly productivity chart
-* Task distribution visualization
-* Productivity insights
-Library Used: Recharts
-Hours Invested: 5 Hours
+### 🔵 Week 2 (March 11 – 17) – Backend Setup
 
-# Challenges Faced
+* Backend project initialization (Node.js & Express)
+* MongoDB database connection
+* User model creation
+* Authentication APIs (Register & Login)
+* JWT authentication and middleware
+* Task model creation
+* Task APIs (Create & Read)
+
+---
+
+### 🟡 Week 3 (March 18 – 24) – Integration
+
+* Task APIs (Update & Delete)
+* API testing using Postman
+* Frontend-backend integration
+* Dynamic data rendering
+* Authentication integration
+* Error handling and validation
+
+---
+
+### 🔴 Week 4 (March 25 – 31) – Finalization
+
+* UI improvements and responsiveness
+* Bug fixing and optimization
+* Full system testing
+* Documentation completion
+* Final review and validation
+
+---
+
+## ⚡ Backend Implementation
+
+* RESTful API development using Express.js
+* MongoDB database integration
+* JWT-based authentication system
+* Password encryption using bcrypt
+* Task CRUD operations
+* Middleware for route protection
+
+---
+
+## 📊 Documentation
+
+The project includes complete documentation:
+
+* Weekly Progress Reports (Week 1 – Week 4)
+* Database Schema Documentation
+* API Documentation
+
+---
+
+## 🚧 Challenges Faced
+
 * Designing responsive UI layouts
-* Managing task filtering logic
-* Integrating chart libraries
-* Structuring reusable components
+* Managing frontend state
+* Implementing JWT authentication
+* Integrating frontend with backend APIs
 
-# Solutions Applied
-* Used Tailwind CSS grid and flex utilities for responsive design.
-* Implemented React state management for task filtering.
-* Used Recharts for data visualization.
+---
 
+## ✅ Solutions Applied
 
+* Used Tailwind CSS for responsive design
+* Followed modular component architecture
+* Implemented middleware for authentication
+* Used Postman for API testing
 
+---
 
+## 📈 Final Project Status
 
+| Module          | Status      |
+| --------------- | ----------- |
+| Frontend        | ✅ Completed |
+| Backend         | ✅ Completed |
+| Authentication  | ✅ Completed |
+| Task Management | ✅ Completed |
+| Analytics       | ✅ Completed |
+| Integration     | ✅ Completed |
+| Documentation   | ✅ Completed |
 
+---
 
+## 🔮 Future Enhancements
 
+* Email notifications for deadlines
+* Real-time updates using WebSockets
+* Team collaboration features
+* Mobile application version
+* AI-based productivity insights
 
+---
 
+## 👩‍💻 Author
 
+**Meghana Kotambari**
+Full Stack Developer Intern
+AP Software Labs
+
+---

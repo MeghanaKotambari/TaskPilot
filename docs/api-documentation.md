@@ -2,76 +2,168 @@
 
 Project: TaskPilot
 
-This document describes the backend APIs required for the task management system.
+This document describes the backend APIs for the Task & Productivity Management System.
 
+Base URL:
+http://localhost:5000/api
+
+---
 
 ## Authentication APIs
 
 ### Register User
 
-POST /api/auth/register
+POST /auth/register
 
 Request Body
 
 {
-  "name": "User Name",
-  "email": "user@email.com",
-  "password": "password"
+"name": "User Name",
+"email": "[user@email.com](mailto:user@email.com)",
+"password": "password"
 }
 
-Description  
-Creates a new user account.
+Success Response (201)
+
+{
+"message": "User registered successfully"
+}
+
+Error Response (400)
+
+{
+"error": "User already exists"
+}
+
+---
 
 ### Login User
 
-POST /api/auth/login
+POST /auth/login
 
 Request Body
 
 {
-  "email": "user@email.com",
-  "password": "password"
+"email": "[user@email.com](mailto:user@email.com)",
+"password": "password"
 }
 
-Description  
-Authenticates user and returns token.
+Success Response (200)
+
+{
+"token": "jwt_token"
+}
+
+Error Response (401)
+
+{
+"error": "Invalid credentials"
+}
+
+---
+
+## Authentication Header
+
+All protected routes require a token:
+
+Authorization: Bearer <token>
+
+---
 
 ## Task APIs
 
 ### Get All Tasks
 
-GET /api/tasks
+GET /tasks
 
-Description  
-Returns list of tasks for the logged-in user.
+Headers
+
+Authorization: Bearer <token>
+
+Success Response (200)
+
+[
+{
+"id": "123",
+"title": "Task title",
+"priority": "High",
+"status": "Pending",
+"deadline": "2026-03-20"
+}
+]
+
+---
 
 ### Create Task
 
-POST /api/tasks
+POST /tasks
+
+Headers
+
+Authorization: Bearer <token>
 
 Request Body
 
-
 {
-  "title": "Task title",
-  "description": "Task description",
-  "priority": "High",
-  "deadline": "2026-03-20"
+"title": "Task title",
+"description": "Task description",
+"priority": "High",
+"deadline": "2026-03-20"
 }
 
-Description  
-Creates a new task.
+Success Response (201)
+
+{
+"message": "Task created successfully"
+}
+
+---
 
 ### Update Task
 
-PUT /api/tasks/:id
+PUT /tasks/:id
 
-Description  
-Updates task status, priority or details.
+Headers
+
+Authorization: Bearer <token>
+
+Request Body
+
+{
+"status": "Completed"
+}
+
+Success Response (200)
+
+{
+"message": "Task updated successfully"
+}
+
+---
 
 ### Delete Task
 
-DELETE /api/tasks/:id
+DELETE /tasks/:id
 
-Description  
-Deletes the selected task.
+Headers
+
+Authorization: Bearer <token>
+
+Success Response (200)
+
+{
+"message": "Task deleted successfully"
+}
+
+---
+
+## Status Codes
+
+200 – Success
+201 – Created
+400 – Bad Request
+401 – Unauthorized
+404 – Not Found
+500 – Server Error
+
+---
