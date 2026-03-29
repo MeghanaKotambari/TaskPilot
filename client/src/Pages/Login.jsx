@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
+import axios from "axios";
 
 const Login = () => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const { data } = await axios.post(
+        "http://localhost:3000/api/auth/login",
+        { email, password }
+      );
+
+      // Save token
+      localStorage.setItem("token", data.token);
+
+      alert("Login Successful ✅");
+
+      // redirect (optional)
+      window.location.href = "/dashboard";
+
+    } catch (error) {
+      alert(error.response?.data?.message || "Login Failed ❌");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#2563EB] via-[#14B8A6] to-[#38BDF8]">
 
@@ -21,17 +48,21 @@ const Login = () => {
             Welcome Back
           </h2>
 
-          <form className="space-y-5">
+          <form className="space-y-5" onSubmit={handleLogin}>
 
             <input
               type="email"
               placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-3 rounded-lg bg-white/80 focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
             />
 
             <input
               type="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-3 rounded-lg bg-white/80 focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
             />
 
@@ -45,7 +76,10 @@ const Login = () => {
 
           <p className="text-center text-white/80 mt-6">
             Don't have an account?
-            <span className="ml-2 underline cursor-pointer">
+            <span
+              className="ml-2 underline cursor-pointer"
+              onClick={() => (window.location.href = "/register")}
+            >
               Register
             </span>
           </p>

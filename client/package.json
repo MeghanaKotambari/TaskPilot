@@ -1,16 +1,17 @@
 {
   "name": "client",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3000",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+    "preview": "vite preview",
+    "lint": "eslint ."
+  },"dev":"nodemon app.js",
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
+    "axios": "^1.7.7",
     "framer-motion": "^12.35.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
