@@ -6,9 +6,19 @@ dotenv.config();
 
 const app = express();
 
+// ✅ CORS CONFIG (IMPORTANT 🔥)
+app.use(
+  cors({
+    origin: [
+      "https://taskpilot-a94x.onrender.com" 
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+  })
+);
+
 // ✅ Middleware
 app.use(express.json());
-app.use(cors());
 
 // ✅ Routes
 const authRoutes = require("./routes/authRoutes");
@@ -26,6 +36,8 @@ app.get("/", (req, res) => {
   res.send("🚀 AP Solutions API is running...");
 });
 
+
+
 // ✅ 404 Handler
 app.use((req, res) => {
   res.status(404).json({ message: "Route not found" });
@@ -41,7 +53,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-// ✅ START SERVER (IMPORTANT 🔥)
+// ✅ START SERVER (RENDER COMPATIBLE)
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, "0.0.0.0", () => {
