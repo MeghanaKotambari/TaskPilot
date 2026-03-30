@@ -1,5 +1,8 @@
 const express = require("express");
 const cors = require("cors");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = express();
 
@@ -7,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// ✅ Routes (wrap in try-safe requires)
+// ✅ Routes
 const authRoutes = require("./routes/authRoutes");
 const taskRoutes = require("./routes/taskRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
@@ -24,7 +27,7 @@ app.get("/", (req, res) => {
 });
 
 // ✅ 404 Handler
-app.use((req, res, next) => {
+app.use((req, res) => {
   res.status(404).json({ message: "Route not found" });
 });
 
@@ -38,4 +41,9 @@ app.use((err, req, res, next) => {
   });
 });
 
-module.exports = app;
+// ✅ START SERVER (IMPORTANT 🔥)
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+});
