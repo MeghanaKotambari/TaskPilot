@@ -19,7 +19,7 @@ const Register = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://taskpilot1-0e8l.onrender.com/api/auth/register",
         { name, email, password }
       );
 

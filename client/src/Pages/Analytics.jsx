@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import axios from "axios";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
 
-const API = "http://localhost:3000";
+const API = "https://taskpilot1-0e8l.onrender.com";
 
 const COLORS = ["#22c55e", "#ef4444", "#f59e0b"];
 

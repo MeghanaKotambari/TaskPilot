@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import axios from "axios";
 
-const API = "http://localhost:3000";
+const API = "https://taskpilot1-0e8l.onrender.com";
 
 const Tasks = () => {
 
